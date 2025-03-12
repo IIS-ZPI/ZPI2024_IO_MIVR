@@ -1,9 +1,19 @@
+interface IArithmeticsDiff
+{
+    double Difference(double A, double B);
+}
+
 interface IArithmeticsMult
 {
     double Multiplication(double A,double B);
 }
 
-public class Main implements IArithmeticsMult{
+public class Main implements IArithmeticsDiff, IArithmeticsMult{
+    public double Difference(double A, double B)
+    {
+        return A - B;
+    }
+
     @Override
     public double Multiplication(double A, double B) {
         return A * B;
