@@ -8,11 +8,16 @@ interface IArithmeticsDiff
     double Difference(double A, double B);
 }
 
-public class Main implements IArithmeticsAdd, IArithmeticsDiff
+interface IArithmeticsMult
 {
-    double Addition(double A, double B)
+    double Multiplication(double A, double B);
+}
+
+public class Main implements IArithmeticsDiff, IArithmeticsMult, IArithmeticsAdd
+{
+    double Multiplication(double A, double B)
     {
-        return A + B;
+        return A * B;
     }
 
     double Difference(double A, double B)
@@ -20,8 +25,12 @@ public class Main implements IArithmeticsAdd, IArithmeticsDiff
         return A - B;
     }
 
-    public static void main(String[] args) 
+    double Addition(double A, double B)
     {
+        return A + B;
+    }
+
+    public static void main(String[] args) {
         System.out.println("MIVR, DevOps, romanbeznosenko");
         System.out.println("Andezion - Vlad");
         System.out.println("MichalColautti");
